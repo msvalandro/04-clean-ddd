@@ -1,6 +1,5 @@
-import { describe, expect, it } from 'vitest'
 import { AnswerQuestionUseCase } from './answer-question'
-import { AnswersRepository } from '../repositories/answers-repository'
+import { AnswersRepository } from '@/domain/repositories/answers-repository'
 
 describe('UseCases: AnswerQuestionUseCase', () => {
   const fakeAnswersRepository: AnswersRepository = {
