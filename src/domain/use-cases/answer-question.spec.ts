@@ -1,11 +1,16 @@
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { AnswerQuestionUseCase } from './answer-question'
+import { AnswersRepository } from '../repositories/answers-repository'
 
 describe('UseCases: AnswerQuestionUseCase', () => {
-  it('should create an answer', () => {
-    const answerQuestion = new AnswerQuestionUseCase()
+  const fakeAnswersRepository: AnswersRepository = {
+    create: async () => {},
+  }
 
-    const answer = answerQuestion.execute({
+  it('should create an answer', async () => {
+    const answerQuestion = new AnswerQuestionUseCase(fakeAnswersRepository)
+
+    const answer = await answerQuestion.execute({
       instructionId: '1',
       questionId: '1',
       content: 'New answer',
