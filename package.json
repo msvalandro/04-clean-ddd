@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint src --ext .ts --fix",
     "test": "vitest run --dir src/domain/use-cases"
   },
   "keywords": [],
@@ -10,6 +11,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@rocketseat/eslint-config": "^2.2.2",
     "@types/node": "^22.14.0",
     "typescript": "^5.8.3",
     "vitest": "^3.1.1"

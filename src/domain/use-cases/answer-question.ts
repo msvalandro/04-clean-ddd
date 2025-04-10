@@ -1,15 +1,19 @@
-import {Answer} from "../entities/answer";
+import { Answer } from '../entities/answer'
 
 type AnswerQuestionUseCaseRequest = {
-    instructionId: string
-    questionId: string
-    content: string
+  instructionId: string
+  questionId: string
+  content: string
 }
 
 export class AnswerQuestionUseCase {
-    execute({ instructionId, questionId, content }: AnswerQuestionUseCaseRequest) {
-        const answer = new Answer(content)
+  execute({
+    instructionId,
+    questionId,
+    content,
+  }: AnswerQuestionUseCaseRequest) {
+    const answer = new Answer(content)
 
-        return answer
-    }
+    return answer
+  }
 }
